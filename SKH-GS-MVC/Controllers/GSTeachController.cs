@@ -14,7 +14,7 @@ namespace SKH_GS_MVC.Controllers
     {
         private GSEntities db = new GSEntities();
 
-        // GET: GSTeach
+        // GET: GSTeach 教學
         public ActionResult Index()
         {
             var teachList = db.teaches
