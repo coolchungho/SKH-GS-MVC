@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="member">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="sequece" Type="int" />
+          <Property Name="id" Type="nchar" MaxLength="7" Nullable="false" />
+          <Property Name="brief_id" Type="nchar" MaxLength="4" />
+          <Property Name="name" Type="nchar" MaxLength="30" />
+          <Property Name="brief" Type="nchar" MaxLength="2" />
+          <Property Name="title" Type="nchar" MaxLength="20" />
+          <Property Name="mobile" Type="nchar" MaxLength="10" />
+          <Property Name="inner_call" Type="nchar" MaxLength="6" />
+          <Property Name="division" Type="nchar" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="teach">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teach_date" Type="date" />
+          <Property Name="weekDay" Type="nchar" MaxLength="2" />
+          <Property Name="teach_time" Type="nchar" MaxLength="20" />
+          <Property Name="activity_name" Type="nchar" MaxLength="30" />
+          <Property Name="learner" Type="nchar" MaxLength="20" />
+          <Property Name="supervisor" Type="nchar" MaxLength="20" />
+          <Property Name="location" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="team">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="team_date" Type="date" />
+          <Property Name="team_no" Type="int" />
+          <Property Name="vs" Type="nchar" MaxLength="20" />
+          <Property Name="fellow" Type="nchar" MaxLength="20" />
+          <Property Name="cr" Type="nchar" MaxLength="20" />
+          <Property Name="r" Type="nchar" MaxLength="20" />
+          <Property Name="pgy" Type="nchar" MaxLength="20" />
+          <Property Name="intern" Type="nchar" MaxLength="20" />
+          <Property Name="clerk" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="GSModelStoreContainer">
+          <EntitySet Name="member" EntityType="Self.member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="teach" EntityType="Self.teach" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="team" EntityType="Self.team" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="member">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="sequece" Type="Int32" />
+          <Property Name="id" Type="String" MaxLength="7" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="title" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="mobile" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="inner_call" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="division" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="brief" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="brief_id" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="GSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="members" EntityType="Self.member" />
+          <EntitySet Name="teaches" EntityType="GSModel.teach" />
+          <EntitySet Name="teams" EntityType="GSModel.team" />
+        </EntityContainer>
+        <EntityType Name="teach">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teach_date" Type="DateTime" Precision="0" />
+          <Property Name="weekDay" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="teach_time" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="activity_name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="learner" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="supervisor" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="location" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="team">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="team_date" Type="DateTime" Precision="0" />
+          <Property Name="team_no" Type="Int32" />
+          <Property Name="vs" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="fellow" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="cr" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="r" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="pgy" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="intern" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="clerk" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GSModelStoreContainer" CdmEntityContainer="GSEntities">
+          <EntitySetMapping Name="members">
+            <EntityTypeMapping TypeName="GSModel.member">
+              <MappingFragment StoreEntitySet="member">
+                <ScalarProperty Name="brief_id" ColumnName="brief_id" />
+                <ScalarProperty Name="brief" ColumnName="brief" />
+                <ScalarProperty Name="sequece" ColumnName="sequece" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="inner_call" ColumnName="inner_call" />
+                <ScalarProperty Name="division" ColumnName="division" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="teaches">
+            <EntityTypeMapping TypeName="GSModel.teach">
+              <MappingFragment StoreEntitySet="teach">
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="supervisor" ColumnName="supervisor" />
+                <ScalarProperty Name="learner" ColumnName="learner" />
+                <ScalarProperty Name="activity_name" ColumnName="activity_name" />
+                <ScalarProperty Name="teach_time" ColumnName="teach_time" />
+                <ScalarProperty Name="weekDay" ColumnName="weekDay" />
+                <ScalarProperty Name="teach_date" ColumnName="teach_date" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="teams">
+            <EntityTypeMapping TypeName="GSModel.team">
+              <MappingFragment StoreEntitySet="team">
+                <ScalarProperty Name="clerk" ColumnName="clerk" />
+                <ScalarProperty Name="intern" ColumnName="intern" />
+                <ScalarProperty Name="pgy" ColumnName="pgy" />
+                <ScalarProperty Name="r" ColumnName="r" />
+                <ScalarProperty Name="cr" ColumnName="cr" />
+                <ScalarProperty Name="fellow" ColumnName="fellow" />
+                <ScalarProperty Name="vs" ColumnName="vs" />
+                <ScalarProperty Name="team_no" ColumnName="team_no" />
+                <ScalarProperty Name="team_date" ColumnName="team_date" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

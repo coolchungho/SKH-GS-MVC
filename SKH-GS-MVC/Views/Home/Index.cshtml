@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>新光一般外科</h1>
+    <p class="lead">維持現狀，即是落伍</p>
+    <p>@DateTime.Today.ToShortDateString()</p>
+    <p>@Html.ActionLink("簡介 >>", "About", "Home", null, new { @class = "btn btn-primary" })</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>今日值班</h2>
+        <table class="table-striped">
+            <tr >
+                <th width="50" align="center">班別</th><th width="80" align="center">姓名</th>
+            </tr>
+           @foreach (var item in ViewBag.duty)
+           {
+            <tr>
+                <td width="50">@item.duty_name</td>
+                <td width="80">@item.duty_man</td>
+            </tr>
+
+           }
+
+        </table>
+              @Html.ActionLink("詳細班表 >>" , "Index", "GSDuty",null , new { @class = "btn btn-default"})
+ 
+        
+    </div>
+    <div class="col-md-4">
+        <h2>教學活動</h2>
+        <table>
+            @foreach(var teachItem in ViewBag.teach )
+            {
+                string backColor = "";
+                if (teachItem.teach_date == DateTime.Today) { backColor = "thistle"; }
+                <tr style="background-color:@backColor">
+                    <td>
+                        @teachItem.teach_date.ToShortDateString() (@teachItem.weekDay) -- @teachItem.teach_time
+                     <br />
+                        &nbsp;&nbsp;@teachItem.activity_name
+                        <br/>
+                    &nbsp;&nbsp;@teachItem.learner / @teachItem.supervisor
+                    <br />
+                     &nbsp;&nbsp;@teachItem.location
+                    </td>                 
+                </tr>
+            }
+  
+        </table>
+        <p>@Html.ActionLink("詳細內容 >>", "Index", "GSTeach", null, new { @class = "btn btn-default" })
+ 
+    </div>
+    <div class="col-md-4">
+        <h2>外科團隊</h2>
+        @foreach(var teamItem in ViewBag.team)
+        {
+            @teamItem<br />
+        }
+        <p><a class="btn btn-default" href="">團隊組合 &raquo;</a></p>
+    </div>
+</div>

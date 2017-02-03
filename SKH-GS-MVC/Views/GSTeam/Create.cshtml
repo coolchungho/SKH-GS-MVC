@@ -1,0 +1,87 @@
+﻿@model IEnumerable<SKH_GS_MVC.Models.team>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/teamCreate.js"></script>
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>新增Team</h2>
+@using (Html.BeginForm())
+{
+    <div ng-app="teamApp" ng-controller="MainCtrl as ctrl">
+
+        <span>開始日期:</span><input id="beginDate" name="beginDate" type="date" />
+        <span>結束日期:</span><input id="endDate" name="endDate" type="date" />
+        <span>VS:</span>
+        <select id="VS" name="VS" ng-model="ctrl.leader" ng-options="c.name as c.name for c in ctrl.teamLeaders" ng-change="ctrl.upDate()">
+            <option value="">--請選擇--</option>
+        </select>
+        <span>Team:</span>
+        <input ng-model="ctrl.teamId"  id="teamId" name="teamId" type="text" />
+        <span>R:</span>
+        <select id="R" name="R" ng-model="ctrl.R" ng-options="r.name as (r.level + r.name) for r in ctrl.Rs">
+            <option value="">--請選擇--</option>
+         </select>
+        
+        <span>PGY:</span><input id="PGY" name="PGY" type="text" />       
+        <input id="Submit1" type="submit" value="確  認" />
+    </div>
+  <hr />
+
+  <table class="table">
+      <tr>
+          <th>
+              @Html.DisplayNameFor(model => model.team_date)
+          </th>
+          <th>
+              @Html.DisplayNameFor(model => model.vs)
+          </th>
+          <th>
+              @Html.DisplayNameFor(model => model.fellow)
+          </th>
+          <th>
+              @Html.DisplayNameFor(model => model.r)
+          </th>
+          <th>
+              @Html.DisplayNameFor(model => model.pgy)
+          </th>
+          <th>
+              @Html.DisplayNameFor(model => model.intern)
+          </th>
+          <th>
+              @Html.DisplayNameFor(model => model.clerk)
+          </th>
+      </tr>      
+      @foreach(var teamItem in Model)
+      {
+          <tr>
+              <td>
+                  @Html.DisplayFor(modelItem =>teamItem.team_date)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem=> teamItem.vs)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem => teamItem.fellow)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem=>teamItem.r)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem => teamItem.pgy)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem => teamItem.intern)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem => teamItem.clerk)
+              </td>
+          </tr>
+      }
+
+  </table>
+
+}
+
+

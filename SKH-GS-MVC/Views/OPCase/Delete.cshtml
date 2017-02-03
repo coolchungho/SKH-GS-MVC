@@ -1,0 +1,913 @@
+﻿@model SKH_GS_MVC.Models.OPRTODRF
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>OPRTODRF</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_CHRT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_CHRT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_TXDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_TXDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OPRM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OPRM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_DEPT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_DEPT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PSRC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PSRC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_BDNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_BDNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_EFLG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_EFLG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_IPNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_IPNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_AS_D)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_AS_D)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_AS_T)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_AS_T)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_AE_D)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_AE_D)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_AE_T)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_AE_T)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_IN_D)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_IN_D)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_IN_T)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_IN_T)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OS_D)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OS_D)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OS_T)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OS_T)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OE_D)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OE_D)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OE_T)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OE_T)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OT_D)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OT_D)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OT_T)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OT_T)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OP_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OP_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OP_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OP_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_KF_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_KF_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_SK_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_SK_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OP_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OP_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_KF_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_KF_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_SK_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_SK_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OP_4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OP_4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_KF_4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_KF_4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_SK_4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_SK_4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_M_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_M_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_DN_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_DN_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_DN_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_DN_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_WN_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_WN_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_WN_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_WN_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_AD_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_AD_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_AD_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_AD_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_AD_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_AD_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_AD_4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_AD_4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PAYK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PAYK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OPID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OPID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ANAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ANAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_AN_D)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_AN_D)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_INDR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_INDR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ASA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ASA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_IRFG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_IRFG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_IDFC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_IDFC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OPAG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OPAG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_FAID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_FAID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_DEAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_DEAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_SAT1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_SAT1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_SAT2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_SAT2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_SAT3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_SAT3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_SAT4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_SAT4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_SAT5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_SAT5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ANS1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ANS1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ANS2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ANS2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ANS3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ANS3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ANS4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ANS4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ANS5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ANS5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_M_D2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_M_D2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_M_D3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_M_D3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_M_D4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_M_D4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PKN1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PKN1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PKN2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PKN2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PKN3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PKN3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PKN4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PKN4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_TIM1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_TIM1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_TIM2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_TIM2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_TIM3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_TIM3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_TIM4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_TIM4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_CHRF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_CHRF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_SPKD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_SPKD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ORMT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ORMT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ANMT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ANMT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ANT1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ANT1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ANT2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ANT2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ANT3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ANT3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_WOUD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_WOUD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ITE1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ITE1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ITE2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ITE2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ITE3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ITE3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_ITE4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_ITE4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_NPRO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_NPRO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC01)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC01)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC02)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC02)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC03)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC03)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC04)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC04)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC05)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC05)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC06)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC06)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC07)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC07)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC08)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC08)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC09)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC09)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC11)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC11)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC12)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC12)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC13)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC13)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC14)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC14)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC15)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC15)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC16)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC16)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC17)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC17)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC18)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC18)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC19)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC19)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PC20)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PC20)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PKN5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PKN5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_TIM5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_TIM5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PRDG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PRDG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_FIND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_FIND)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_OPP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_OPP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODR_PODG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODR_PODG)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

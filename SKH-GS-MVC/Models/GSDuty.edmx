@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GSDutyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="date_type">
+          <Key>
+            <PropertyRef Name="duty_date" />
+          </Key>
+          <Property Name="duty_date" Type="date" Nullable="false" />
+          <Property Name="week_of_date" Type="nchar" MaxLength="10" />
+          <Property Name="type_of_date" Type="nchar" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="division">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="skh_division" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="duty_note">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="year_month" Type="nchar" MaxLength="6" />
+          <Property Name="division" Type="nchar" MaxLength="4" />
+          <Property Name="note" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="duty_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date" Type="date" />
+          <Property Name="weekDay" Type="nchar" MaxLength="10" />
+          <Property Name="typeDay" Type="nchar" MaxLength="10" />
+          <Property Name="duty_type_id" Type="nchar" MaxLength="7" Nullable="false" />
+          <Property Name="duty_man" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="duty_type">
+          <Key>
+            <PropertyRef Name="duty_type_id" />
+          </Key>
+          <Property Name="duty_type_id" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="duty_name" Type="nchar" MaxLength="30" />
+          <Property Name="duty_type" Type="nchar" MaxLength="20" />
+          <Property Name="duty_description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'duty.dbo.duty_View' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="duty_View">
+          <Key>
+            <PropertyRef Name="duty_type_id" />
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="date" Type="date" />
+          <Property Name="weekDay" Type="nchar" MaxLength="10" />
+          <Property Name="typeDay" Type="nchar" MaxLength="10" />
+          <Property Name="duty_type_id" Type="nchar" MaxLength="7" Nullable="false" />
+          <Property Name="duty_name" Type="nchar" MaxLength="30" />
+          <Property Name="duty_type" Type="nchar" MaxLength="20" />
+          <Property Name="duty_description" Type="nvarchar" MaxLength="255" />
+          <Property Name="duty_man" Type="nchar" MaxLength="20" />
+          <Property Name="id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="GSDutyModelStoreContainer">
+          <EntitySet Name="date_type" EntityType="Self.date_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="division" EntityType="Self.division" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="duty_note" EntityType="Self.duty_note" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="duty_table" EntityType="Self.duty_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="duty_type" EntityType="Self.duty_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="duty_View" EntityType="Self.duty_View" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [duty_View].[date] AS [date], 
+    [duty_View].[weekDay] AS [weekDay], 
+    [duty_View].[typeDay] AS [typeDay], 
+    [duty_View].[duty_type_id] AS [duty_type_id], 
+    [duty_View].[duty_name] AS [duty_name], 
+    [duty_View].[duty_type] AS [duty_type], 
+    [duty_View].[duty_description] AS [duty_description], 
+    [duty_View].[duty_man] AS [duty_man], 
+    [duty_View].[id] AS [id]
+    FROM [dbo].[duty_View] AS [duty_View]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GSDutyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="date_type">
+          <Key>
+            <PropertyRef Name="duty_date" />
+          </Key>
+          <Property Name="duty_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="week_of_date" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="type_of_date" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="division">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="skh_division" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="duty_note">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year_month" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="division" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="duty_type">
+          <Key>
+            <PropertyRef Name="duty_type_id" />
+          </Key>
+          <Property Name="duty_type_id" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="duty_name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="duty_type1" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="duty_description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="GSdutyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="date_type" EntityType="Self.date_type" />
+          <EntitySet Name="divisions" EntityType="Self.division" />
+          <EntitySet Name="duty_note" EntityType="Self.duty_note" />
+          <EntitySet Name="duty_type" EntityType="Self.duty_type" />
+          <EntitySet Name="duty_View" EntityType="GSDutyModel.duty_View" />
+          <EntitySet Name="duty_table" EntityType="GSDutyModel.duty_table" />
+        </EntityContainer>
+        <EntityType Name="duty_View">
+          <Key>
+            <PropertyRef Name="duty_type_id" />
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="weekDay" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="typeDay" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="duty_type_id" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="true" />
+          <Property Name="duty_name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="duty_type" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="duty_description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="duty_man" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="id" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="duty_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="weekDay" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="typeDay" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="duty_type_id" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="true" />
+          <Property Name="duty_man" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GSDutyModelStoreContainer" CdmEntityContainer="GSdutyEntities">
+          <EntitySetMapping Name="date_type">
+            <EntityTypeMapping TypeName="GSDutyModel.date_type">
+              <MappingFragment StoreEntitySet="date_type">
+                <ScalarProperty Name="duty_date" ColumnName="duty_date" />
+                <ScalarProperty Name="week_of_date" ColumnName="week_of_date" />
+                <ScalarProperty Name="type_of_date" ColumnName="type_of_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="divisions">
+            <EntityTypeMapping TypeName="GSDutyModel.division">
+              <MappingFragment StoreEntitySet="division">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="skh_division" ColumnName="skh_division" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="duty_note">
+            <EntityTypeMapping TypeName="GSDutyModel.duty_note">
+              <MappingFragment StoreEntitySet="duty_note">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="year_month" ColumnName="year_month" />
+                <ScalarProperty Name="division" ColumnName="division" />
+                <ScalarProperty Name="note" ColumnName="note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="duty_type">
+            <EntityTypeMapping TypeName="GSDutyModel.duty_type">
+              <MappingFragment StoreEntitySet="duty_type">
+                <ScalarProperty Name="duty_type_id" ColumnName="duty_type_id" />
+                <ScalarProperty Name="duty_name" ColumnName="duty_name" />
+                <ScalarProperty Name="duty_type1" ColumnName="duty_type" />
+                <ScalarProperty Name="duty_description" ColumnName="duty_description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="duty_View">
+            <EntityTypeMapping TypeName="GSDutyModel.duty_View">
+              <MappingFragment StoreEntitySet="duty_View">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="duty_man" ColumnName="duty_man" />
+                <ScalarProperty Name="duty_description" ColumnName="duty_description" />
+                <ScalarProperty Name="duty_type" ColumnName="duty_type" />
+                <ScalarProperty Name="duty_name" ColumnName="duty_name" />
+                <ScalarProperty Name="duty_type_id" ColumnName="duty_type_id" />
+                <ScalarProperty Name="typeDay" ColumnName="typeDay" />
+                <ScalarProperty Name="weekDay" ColumnName="weekDay" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="duty_table">
+            <EntityTypeMapping TypeName="GSDutyModel.duty_table">
+              <MappingFragment StoreEntitySet="duty_table">
+                <ScalarProperty Name="duty_man" ColumnName="duty_man" />
+                <ScalarProperty Name="duty_type_id" ColumnName="duty_type_id" />
+                <ScalarProperty Name="typeDay" ColumnName="typeDay" />
+                <ScalarProperty Name="weekDay" ColumnName="weekDay" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

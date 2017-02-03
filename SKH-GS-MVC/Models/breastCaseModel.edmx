@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="breast_cancerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="meeting_case">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="20" />
+          <Property Name="age" Type="int" />
+          <Property Name="sex" Type="nchar" MaxLength="10" />
+          <Property Name="chartNo" Type="nchar" MaxLength="8" />
+          <Property Name="history" Type="nvarchar" MaxLength="511" />
+          <Property Name="GSR" Type="nchar" MaxLength="20" />
+          <Property Name="GSVS" Type="nchar" MaxLength="20" />
+          <Property Name="PathoVS" Type="nchar" MaxLength="20" />
+          <Property Name="meet_date" Type="date" />
+        </EntityType>
+        <EntityType Name="member">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="memberId" Type="nchar" MaxLength="7" />
+          <Property Name="name" Type="nchar" MaxLength="20" />
+          <Property Name="depart" Type="nchar" MaxLength="20" />
+          <Property Name="division" Type="nchar" MaxLength="20" />
+          <Property Name="title" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="breast_cancerModelStoreContainer">
+          <EntitySet Name="meeting_case" EntityType="Self.meeting_case" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="member" EntityType="Self.member" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="breast_cancerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="meeting_case">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="chartNo" Type="String" MaxLength="8" FixedLength="true" Unicode="true" />
+          <Property Name="history" Type="String" MaxLength="511" FixedLength="false" Unicode="true" />
+          <Property Name="GSR" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="GSVS" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="PathoVS" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="meet_date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="breast_cancerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="meeting_case" EntityType="Self.meeting_case" />
+          <EntitySet Name="members" EntityType="breast_cancerModel.member" />
+        </EntityContainer>
+        <EntityType Name="member">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="memberId" Type="String" MaxLength="7" FixedLength="true" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="depart" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="division" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="title" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="breast_cancerModelStoreContainer" CdmEntityContainer="breast_cancerEntities">
+          <EntitySetMapping Name="meeting_case">
+            <EntityTypeMapping TypeName="breast_cancerModel.meeting_case">
+              <MappingFragment StoreEntitySet="meeting_case">
+                <ScalarProperty Name="meet_date" ColumnName="meet_date" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="chartNo" ColumnName="chartNo" />
+                <ScalarProperty Name="history" ColumnName="history" />
+                <ScalarProperty Name="GSR" ColumnName="GSR" />
+                <ScalarProperty Name="GSVS" ColumnName="GSVS" />
+                <ScalarProperty Name="PathoVS" ColumnName="PathoVS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="members">
+            <EntityTypeMapping TypeName="breast_cancerModel.member">
+              <MappingFragment StoreEntitySet="member">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="division" ColumnName="division" />
+                <ScalarProperty Name="depart" ColumnName="depart" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="memberId" ColumnName="memberId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

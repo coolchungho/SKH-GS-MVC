@@ -1,0 +1,81 @@
+﻿@model SKH_GS_MVC.Models.teach
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>teach</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.teach_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.teach_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weekDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weekDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.teach_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.teach_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.activity_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.activity_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.learner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.learner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.supervisor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.supervisor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.location)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

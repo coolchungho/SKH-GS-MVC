@@ -1,0 +1,87 @@
+﻿@model IEnumerable<SKH_GS_MVC.Models.OPRTODRF>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>病例討論</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        開始日期: <input type="text"  name ="begin_date" id="begin_date" value=@ViewBag.begin_date  data-datepicker="" />
+        結束日期:    <input type="text" name="end_date" id="end_date" value=@ViewBag.end_date data-datepicker="" />
+        <input type="submit"  value="確 認"/>
+    </p>
+}
+
+<table class="table-striped" >
+    
+    <tr >
+        <th>
+            @Html.DisplayName("病歷號")
+        </th>
+        <th>
+            @Html.DisplayName("日期")
+        </th>
+        <th>
+            @Html.DisplayName("床號")
+        </th> 
+        <th>
+            @Html.DisplayName("類別")
+        </th>
+        <th>
+            @Html.DisplayName("術式")
+        </th>
+        <th>
+            @Html.DisplayName("主刀醫師")
+  
+        <th>
+            @Html.DisplayName("術前診斷")
+        </th>
+  
+        <th>
+            @Html.DisplayName("術後診斷")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr >
+        <td>
+            <h5>@Html.DisplayFor(modelItem => item.ODR_CHRT)</h5>
+        </td>
+        <td>
+            <h4> @Html.DisplayFor(modelItem => item.ODR_TXDT)</h4>
+        </td>
+ 
+        <td align="center">
+            <h5> @Html.DisplayFor(modelItem => item.ODR_BDNO)</h5>
+        </td>
+        <td align="center">
+            <h4  style="color:brown; "> @Html.DisplayFor(modelItem => item.ODR_PSRC)</h4>
+       </td>
+ 
+        <td align="center">
+            <h5 >@Html.DisplayFor(modelItem => item.ODR_OP_1)</h5>
+       </td>
+
+        <td align="center">
+            <h4 style="color:brown; "> @Html.DisplayFor(modelItem => item.ODR_M_DR)</h4>
+        </td>
+
+
+        <td>
+           <h5>@Html.DisplayFor(modelItem => item.ODR_PRDG)</h5>
+        </td>
+
+ 
+        <td>
+            <h4>@Html.DisplayFor(modelItem => item.ODR_PODG)</h4>
+        </td>
+
+    </tr>
+}
+
+</table>

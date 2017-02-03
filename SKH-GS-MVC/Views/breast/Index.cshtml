@@ -1,0 +1,73 @@
+﻿@model IEnumerable<SKH_GS_MVC.Models.meeting_case>
+
+@{
+    ViewBag.Title = "討論個案";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>乳癌多專科團隊討論個案</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.Label("討論日期: ")
+        @Html.DropDownList("meet_date", (SelectList)ViewBag.meet_date)
+        <input type="submit" value="查詢"/>    
+    </p>
+}
+
+<p>
+    @Html.ActionLink("新增", "Create")
+</p>
+<table class="table" >
+
+
+@foreach (var item in Model) {
+    <tr style="background-color:lightsteelblue">
+        <td >
+             @Html.LabelFor(modelItem => item.name)
+             @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.LabelFor(modelItem => item.age)
+            @Html.DisplayFor(modelItem => item.age)
+        </td>
+        <td>
+            @Html.LabelFor(modelItem => item.sex)
+            @Html.DisplayFor(modelItem => item.sex)
+        </td>
+        <td>
+            @Html.LabelFor(modelItem => item.chartNo)
+            @Html.DisplayFor(modelItem => item.chartNo)
+        </td>
+
+        <td>
+            @Html.ActionLink("修改", "Edit", new { id=item.id }) |
+           
+           
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            @Html.LabelFor(modelItem => item.history)
+            <br />          
+           <textarea  style="width:800px; height:200px; " >@item.history</textarea>                               
+        </td>
+    </tr>
+    <tr >
+        <td colspan="4" align="right">
+            @Html.LabelFor(modelItem => item.GSR)
+            @Html.DisplayFor(modelItem => item.GSR)醫師 |
+
+
+            @Html.LabelFor(modelItem => item.GSVS)
+            @Html.DisplayFor(modelItem => item.GSVS)醫師 |
+
+
+            @Html.LabelFor(modelItem => item.PathoVS)
+            @Html.DisplayFor(modelItem => item.PathoVS)醫師 |
+        </td>
+    </tr>
+}
+
+</table>

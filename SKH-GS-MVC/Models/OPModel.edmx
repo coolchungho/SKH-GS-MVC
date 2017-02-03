@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="OPRTODRF">
+          <Key>
+            <PropertyRef Name="ODR_LOGN" />
+          </Key>
+          <Property Name="ODR_LOGN" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="ODR_CHRT" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="ODR_TXDT" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="ODR_OPRM" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ODR_DEPT" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="ODR_PSRC" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_BDNO" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="ODR_EFLG" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_IPNO" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="ODR_AS_D" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="ODR_AS_T" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="ODR_AE_D" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="ODR_AE_T" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="ODR_IN_D" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="ODR_IN_T" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="ODR_OS_D" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="ODR_OS_T" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="ODR_OE_D" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="ODR_OE_T" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="ODR_OT_D" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="ODR_OT_T" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="ODR_OP_1" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ODR_OP_2" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ODR_KF_2" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_SK_2" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_OP_3" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ODR_KF_3" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_SK_3" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_OP_4" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ODR_KF_4" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_SK_4" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_M_DR" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="ODR_DN_1" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="ODR_DN_2" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="ODR_WN_1" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="ODR_WN_2" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="ODR_AD_1" Type="smallint" Nullable="false" />
+          <Property Name="ODR_AD_2" Type="smallint" Nullable="false" />
+          <Property Name="ODR_AD_3" Type="smallint" Nullable="false" />
+          <Property Name="ODR_AD_4" Type="smallint" Nullable="false" />
+          <Property Name="ODR_PAYK" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ODR_OPID" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ODR_ANAM" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_AN_D" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="ODR_INDR" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="ODR_ASA" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ODR_IRFG" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_IDFC" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_OPAG" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_FAID" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_DEAD" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_SAT1" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ODR_SAT2" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ODR_SAT3" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ODR_SAT4" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ODR_SAT5" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ODR_ANS1" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ODR_ANS2" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ODR_ANS3" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ODR_ANS4" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ODR_ANS5" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ODR_M_D2" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="ODR_M_D3" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="ODR_M_D4" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="ODR_PKN1" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_PKN2" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_PKN3" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_PKN4" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_TIM1" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="ODR_TIM2" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="ODR_TIM3" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="ODR_TIM4" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="ODR_CHRF" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_SPKD" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ODR_ORMT" Type="int" Nullable="false" />
+          <Property Name="ODR_ANMT" Type="int" Nullable="false" />
+          <Property Name="ODR_ANT1" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="ODR_ANT2" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="ODR_ANT3" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="ODR_WOUD" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_ITE1" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ODR_ITE2" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ODR_ITE3" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ODR_ITE4" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ODR_NPRO" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_PC01" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC02" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC03" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC04" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC05" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC06" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC07" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC08" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC09" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC10" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC11" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC12" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC13" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC14" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC15" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC16" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC17" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC18" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC19" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PC20" Type="char" MaxLength="9" Nullable="false" />
+          <Property Name="ODR_PKN5" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ODR_TIM5" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="ODR_PRDG" Type="nvarchar(max)" />
+          <Property Name="ODR_FIND" Type="nvarchar(max)" />
+          <Property Name="ODR_OPF" Type="nvarchar(max)" />
+          <Property Name="ODR_OPP" Type="nvarchar(max)" />
+          <Property Name="ODR_PODG" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="OPModelStoreContainer">
+          <EntitySet Name="OPRTODRF" EntityType="Self.OPRTODRF" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="OPRTODRF">
+          <Key>
+            <PropertyRef Name="ODR_LOGN" />
+          </Key>
+          <Property Name="ODR_LOGN" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_CHRT" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_TXDT" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_OPRM" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_DEPT" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PSRC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_BDNO" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_EFLG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_IPNO" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_AS_D" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_AS_T" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_AE_D" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_AE_T" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_IN_D" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_IN_T" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_OS_D" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_OS_T" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_OE_D" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_OE_T" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_OT_D" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_OT_T" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_OP_1" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_OP_2" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_KF_2" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_SK_2" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_OP_3" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_KF_3" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_SK_3" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_OP_4" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_KF_4" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_SK_4" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_M_DR" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_DN_1" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_DN_2" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_WN_1" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_WN_2" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_AD_1" Type="Int16" Nullable="false" />
+          <Property Name="ODR_AD_2" Type="Int16" Nullable="false" />
+          <Property Name="ODR_AD_3" Type="Int16" Nullable="false" />
+          <Property Name="ODR_AD_4" Type="Int16" Nullable="false" />
+          <Property Name="ODR_PAYK" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_OPID" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_ANAM" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_AN_D" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_INDR" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_ASA" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_IRFG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_IDFC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_OPAG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_FAID" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_DEAD" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_SAT1" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_SAT2" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_SAT3" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_SAT4" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_SAT5" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_ANS1" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_ANS2" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_ANS3" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_ANS4" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_ANS5" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_M_D2" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_M_D3" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_M_D4" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PKN1" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PKN2" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PKN3" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PKN4" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_TIM1" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_TIM2" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_TIM3" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_TIM4" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_CHRF" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_SPKD" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_ORMT" Type="Int32" Nullable="false" />
+          <Property Name="ODR_ANMT" Type="Int32" Nullable="false" />
+          <Property Name="ODR_ANT1" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_ANT2" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_ANT3" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_WOUD" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_ITE1" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_ITE2" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_ITE3" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_ITE4" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_NPRO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC01" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC02" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC03" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC04" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC05" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC06" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC07" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC08" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC09" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC10" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC11" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC12" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC13" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC14" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC15" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC16" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC17" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC18" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC19" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PC20" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PKN5" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_TIM5" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ODR_PRDG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ODR_FIND" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ODR_OPF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ODR_OPP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ODR_PODG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="OPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="OPRTODRFs" EntityType="Self.OPRTODRF" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OPModelStoreContainer" CdmEntityContainer="OPEntities">
+          <EntitySetMapping Name="OPRTODRFs">
+            <EntityTypeMapping TypeName="OPModel.OPRTODRF">
+              <MappingFragment StoreEntitySet="OPRTODRF">
+                <ScalarProperty Name="ODR_LOGN" ColumnName="ODR_LOGN" />
+                <ScalarProperty Name="ODR_CHRT" ColumnName="ODR_CHRT" />
+                <ScalarProperty Name="ODR_TXDT" ColumnName="ODR_TXDT" />
+                <ScalarProperty Name="ODR_OPRM" ColumnName="ODR_OPRM" />
+                <ScalarProperty Name="ODR_DEPT" ColumnName="ODR_DEPT" />
+                <ScalarProperty Name="ODR_PSRC" ColumnName="ODR_PSRC" />
+                <ScalarProperty Name="ODR_BDNO" ColumnName="ODR_BDNO" />
+                <ScalarProperty Name="ODR_EFLG" ColumnName="ODR_EFLG" />
+                <ScalarProperty Name="ODR_IPNO" ColumnName="ODR_IPNO" />
+                <ScalarProperty Name="ODR_AS_D" ColumnName="ODR_AS_D" />
+                <ScalarProperty Name="ODR_AS_T" ColumnName="ODR_AS_T" />
+                <ScalarProperty Name="ODR_AE_D" ColumnName="ODR_AE_D" />
+                <ScalarProperty Name="ODR_AE_T" ColumnName="ODR_AE_T" />
+                <ScalarProperty Name="ODR_IN_D" ColumnName="ODR_IN_D" />
+                <ScalarProperty Name="ODR_IN_T" ColumnName="ODR_IN_T" />
+                <ScalarProperty Name="ODR_OS_D" ColumnName="ODR_OS_D" />
+                <ScalarProperty Name="ODR_OS_T" ColumnName="ODR_OS_T" />
+                <ScalarProperty Name="ODR_OE_D" ColumnName="ODR_OE_D" />
+                <ScalarProperty Name="ODR_OE_T" ColumnName="ODR_OE_T" />
+                <ScalarProperty Name="ODR_OT_D" ColumnName="ODR_OT_D" />
+                <ScalarProperty Name="ODR_OT_T" ColumnName="ODR_OT_T" />
+                <ScalarProperty Name="ODR_OP_1" ColumnName="ODR_OP_1" />
+                <ScalarProperty Name="ODR_OP_2" ColumnName="ODR_OP_2" />
+                <ScalarProperty Name="ODR_KF_2" ColumnName="ODR_KF_2" />
+                <ScalarProperty Name="ODR_SK_2" ColumnName="ODR_SK_2" />
+                <ScalarProperty Name="ODR_OP_3" ColumnName="ODR_OP_3" />
+                <ScalarProperty Name="ODR_KF_3" ColumnName="ODR_KF_3" />
+                <ScalarProperty Name="ODR_SK_3" ColumnName="ODR_SK_3" />
+                <ScalarProperty Name="ODR_OP_4" ColumnName="ODR_OP_4" />
+                <ScalarProperty Name="ODR_KF_4" ColumnName="ODR_KF_4" />
+                <ScalarProperty Name="ODR_SK_4" ColumnName="ODR_SK_4" />
+                <ScalarProperty Name="ODR_M_DR" ColumnName="ODR_M_DR" />
+                <ScalarProperty Name="ODR_DN_1" ColumnName="ODR_DN_1" />
+                <ScalarProperty Name="ODR_DN_2" ColumnName="ODR_DN_2" />
+                <ScalarProperty Name="ODR_WN_1" ColumnName="ODR_WN_1" />
+                <ScalarProperty Name="ODR_WN_2" ColumnName="ODR_WN_2" />
+                <ScalarProperty Name="ODR_AD_1" ColumnName="ODR_AD_1" />
+                <ScalarProperty Name="ODR_AD_2" ColumnName="ODR_AD_2" />
+                <ScalarProperty Name="ODR_AD_3" ColumnName="ODR_AD_3" />
+                <ScalarProperty Name="ODR_AD_4" ColumnName="ODR_AD_4" />
+                <ScalarProperty Name="ODR_PAYK" ColumnName="ODR_PAYK" />
+                <ScalarProperty Name="ODR_OPID" ColumnName="ODR_OPID" />
+                <ScalarProperty Name="ODR_ANAM" ColumnName="ODR_ANAM" />
+                <ScalarProperty Name="ODR_AN_D" ColumnName="ODR_AN_D" />
+                <ScalarProperty Name="ODR_INDR" ColumnName="ODR_INDR" />
+                <ScalarProperty Name="ODR_ASA" ColumnName="ODR_ASA" />
+                <ScalarProperty Name="ODR_IRFG" ColumnName="ODR_IRFG" />
+                <ScalarProperty Name="ODR_IDFC" ColumnName="ODR_IDFC" />
+                <ScalarProperty Name="ODR_OPAG" ColumnName="ODR_OPAG" />
+                <ScalarProperty Name="ODR_FAID" ColumnName="ODR_FAID" />
+                <ScalarProperty Name="ODR_DEAD" ColumnName="ODR_DEAD" />
+                <ScalarProperty Name="ODR_SAT1" ColumnName="ODR_SAT1" />
+                <ScalarProperty Name="ODR_SAT2" ColumnName="ODR_SAT2" />
+                <ScalarProperty Name="ODR_SAT3" ColumnName="ODR_SAT3" />
+                <ScalarProperty Name="ODR_SAT4" ColumnName="ODR_SAT4" />
+                <ScalarProperty Name="ODR_SAT5" ColumnName="ODR_SAT5" />
+                <ScalarProperty Name="ODR_ANS1" ColumnName="ODR_ANS1" />
+                <ScalarProperty Name="ODR_ANS2" ColumnName="ODR_ANS2" />
+                <ScalarProperty Name="ODR_ANS3" ColumnName="ODR_ANS3" />
+                <ScalarProperty Name="ODR_ANS4" ColumnName="ODR_ANS4" />
+                <ScalarProperty Name="ODR_ANS5" ColumnName="ODR_ANS5" />
+                <ScalarProperty Name="ODR_M_D2" ColumnName="ODR_M_D2" />
+                <ScalarProperty Name="ODR_M_D3" ColumnName="ODR_M_D3" />
+                <ScalarProperty Name="ODR_M_D4" ColumnName="ODR_M_D4" />
+                <ScalarProperty Name="ODR_PKN1" ColumnName="ODR_PKN1" />
+                <ScalarProperty Name="ODR_PKN2" ColumnName="ODR_PKN2" />
+                <ScalarProperty Name="ODR_PKN3" ColumnName="ODR_PKN3" />
+                <ScalarProperty Name="ODR_PKN4" ColumnName="ODR_PKN4" />
+                <ScalarProperty Name="ODR_TIM1" ColumnName="ODR_TIM1" />
+                <ScalarProperty Name="ODR_TIM2" ColumnName="ODR_TIM2" />
+                <ScalarProperty Name="ODR_TIM3" ColumnName="ODR_TIM3" />
+                <ScalarProperty Name="ODR_TIM4" ColumnName="ODR_TIM4" />
+                <ScalarProperty Name="ODR_CHRF" ColumnName="ODR_CHRF" />
+                <ScalarProperty Name="ODR_SPKD" ColumnName="ODR_SPKD" />
+                <ScalarProperty Name="ODR_ORMT" ColumnName="ODR_ORMT" />
+                <ScalarProperty Name="ODR_ANMT" ColumnName="ODR_ANMT" />
+                <ScalarProperty Name="ODR_ANT1" ColumnName="ODR_ANT1" />
+                <ScalarProperty Name="ODR_ANT2" ColumnName="ODR_ANT2" />
+                <ScalarProperty Name="ODR_ANT3" ColumnName="ODR_ANT3" />
+                <ScalarProperty Name="ODR_WOUD" ColumnName="ODR_WOUD" />
+                <ScalarProperty Name="ODR_ITE1" ColumnName="ODR_ITE1" />
+                <ScalarProperty Name="ODR_ITE2" ColumnName="ODR_ITE2" />
+                <ScalarProperty Name="ODR_ITE3" ColumnName="ODR_ITE3" />
+                <ScalarProperty Name="ODR_ITE4" ColumnName="ODR_ITE4" />
+                <ScalarProperty Name="ODR_NPRO" ColumnName="ODR_NPRO" />
+                <ScalarProperty Name="ODR_PC01" ColumnName="ODR_PC01" />
+                <ScalarProperty Name="ODR_PC02" ColumnName="ODR_PC02" />
+                <ScalarProperty Name="ODR_PC03" ColumnName="ODR_PC03" />
+                <ScalarProperty Name="ODR_PC04" ColumnName="ODR_PC04" />
+                <ScalarProperty Name="ODR_PC05" ColumnName="ODR_PC05" />
+                <ScalarProperty Name="ODR_PC06" ColumnName="ODR_PC06" />
+                <ScalarProperty Name="ODR_PC07" ColumnName="ODR_PC07" />
+                <ScalarProperty Name="ODR_PC08" ColumnName="ODR_PC08" />
+                <ScalarProperty Name="ODR_PC09" ColumnName="ODR_PC09" />
+                <ScalarProperty Name="ODR_PC10" ColumnName="ODR_PC10" />
+                <ScalarProperty Name="ODR_PC11" ColumnName="ODR_PC11" />
+                <ScalarProperty Name="ODR_PC12" ColumnName="ODR_PC12" />
+                <ScalarProperty Name="ODR_PC13" ColumnName="ODR_PC13" />
+                <ScalarProperty Name="ODR_PC14" ColumnName="ODR_PC14" />
+                <ScalarProperty Name="ODR_PC15" ColumnName="ODR_PC15" />
+                <ScalarProperty Name="ODR_PC16" ColumnName="ODR_PC16" />
+                <ScalarProperty Name="ODR_PC17" ColumnName="ODR_PC17" />
+                <ScalarProperty Name="ODR_PC18" ColumnName="ODR_PC18" />
+                <ScalarProperty Name="ODR_PC19" ColumnName="ODR_PC19" />
+                <ScalarProperty Name="ODR_PC20" ColumnName="ODR_PC20" />
+                <ScalarProperty Name="ODR_PKN5" ColumnName="ODR_PKN5" />
+                <ScalarProperty Name="ODR_TIM5" ColumnName="ODR_TIM5" />
+                <ScalarProperty Name="ODR_PRDG" ColumnName="ODR_PRDG" />
+                <ScalarProperty Name="ODR_FIND" ColumnName="ODR_FIND" />
+                <ScalarProperty Name="ODR_OPF" ColumnName="ODR_OPF" />
+                <ScalarProperty Name="ODR_OPP" ColumnName="ODR_OPP" />
+                <ScalarProperty Name="ODR_PODG" ColumnName="ODR_PODG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<SKH_GS_MVC.Models.teach>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>一般外科教學活動</h2>
+
+<p>
+    @Html.ActionLink("新增", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.teach_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.weekDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.teach_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.activity_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.learner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supervisor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.location)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    string backColor = "";
+    if (item.teach_date == DateTime.Today) { backColor = "thistle"; }
+    <tr style="background-color:@backColor">
+        <td>
+            @Html.DisplayFor(modelItem => item.teach_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.weekDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.teach_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.activity_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.learner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.supervisor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.location)
+        </td>
+        <td>
+            @Html.ActionLink("修改", "Edit", new { id=item.id }) |           
+        
+        </td>
+    </tr>
+}
+
+</table>

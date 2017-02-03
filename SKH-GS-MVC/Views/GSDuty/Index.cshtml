@@ -1,0 +1,115 @@
+﻿@model IEnumerable<SKH_GS_MVC.Models.DutyItemModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>班表查詢</h2>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        <p>
+            @{ 
+                string[] years = new string[] { "2016", "2017" };
+                var selectYears = new SelectList(years);
+                var default_year = DateTime.Today.ToString("yyyy");
+            }
+            年度:
+            <select name="year">
+                <option value="2016" selected>2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+            </select>
+
+   
+            月份:
+            @{
+                string[] months = new string[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" };
+                var selectItems = new SelectList(months);
+                var default_month = DateTime.Today.ToString("MM");
+            }
+            
+
+            @Html.DropDownList("monthList", "--請選擇--")
+
+            科別:
+            @Html.DropDownList("skh_division", "--請選擇--")
+            <input type="submit" value="查詢" />
+        </p>         
+     }
+</div>
+
+
+<hr />
+
+<h2>@ViewBag.dutyTitle</h2>
+<h4>今日值班: </h4>
+<table class="table-striped" width="600">
+    <tr style="background-color:darkgrey ">
+        <th >日期</th>
+        <th>星期</th>
+        @foreach (var list in ViewBag.titleList)
+        {
+            <th> @list</th>
+        }
+    </tr>
+  <tr>
+      @foreach(var dutyItem in ViewBag.dutyToday)
+      {
+          <td> @dutyItem.dutyDate.ToString("yyyy/MM/dd")</td>
+          <td>@dutyItem.weekDay</td>
+          <td>@dutyItem.duty1Man</td>
+          <td>@dutyItem.duty2Man</td>
+         <td>@dutyItem.duty3Man</td>
+         <td>@dutyItem.duty4Man</td>
+      }
+  </tr>
+</table>
+<hr />
+<h4>
+    @ViewBag.dutyNote
+</h4>
+<hr />
+<table class="table-striped" width="600">
+    <tr style="background-color:darkgrey ">
+        <th >日期</th>
+        <th>星期</th>
+        @foreach (var list in ViewBag.titleList)
+        {
+            <th> @list</th>
+        }
+    </tr>
+@foreach (var item in Model)
+{
+    string backColor = "";
+    if (item.weekDay.Trim() == "日") {  backColor = "thistle"; }
+
+    <tr style="background-color:@backColor">
+        <td >
+            @Html.DisplayFor(modelItem => item.dutyDate)
+        </td>
+        <td >
+            @Html.DisplayFor(modelItem => item.weekDay)           
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duty1Man)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duty2Man)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duty3Man)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duty4Man)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duty5Man)
+        </td>
+    </tr>
+}
+
+
+
+</table>

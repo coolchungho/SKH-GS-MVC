@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "FileUpload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>班表檔案上傳</h2>
+
+<form action="/GSDuty/Upload" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-lg-8">
+            <h3 style="color:brown">上傳班表檔案:  </h3>
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">上傳</button>
+                </span>
+                <input type="file" name="file" id="file" class="form-control" >
+
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+
+
+</form>
+

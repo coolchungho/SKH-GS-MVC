@@ -1,0 +1,117 @@
+﻿
+@model IEnumerable<SKH_GS_MVC.Models.teach>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/teachCreate.js"></script>
+
+@{
+    ViewBag.Title = "CreateMultiple";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>新增教學活動</h2>
+
+<div>
+    @Html.ActionLink("回教學首頁", "Index")
+</div>
+<div ng-app="teachApp" ng-controller="MainCtrl as ctrl">   
+    {{ctrl.class_item}}{{ctrl.activity_name}}
+    <input id="Text1" type="text" ng-bind="ctrl.items" />
+    @using (Html.BeginForm())
+    {
+        <span class="label label-primary">教學活動: </span>
+        <select ng-model="ctrl.activity_name" ng-options="c.activity_name as c.activity_name for c in ctrl.meetings" ng-change="ctrl.upDate()"></select><br />
+        <input ng-model="ctrl.activity_name" class="form-control" id="activity_name"name="activity_name" type="text" />
+        <span class="label label-primary">日期: </span>
+                <input class="form-control" id="teachDate" name="teachDate" type="date" />
+        <span class="label label-primary">星期: </span>
+                <input class="form-control" id="teachWeekDay" name="teachWeekDay" type="text" ng-model="ctrl.weekDay" />
+                <span class="label label-primary">時間: </span>
+                <input class="form-control" id="teach_time" name="teach_time" type="text" ng-model="ctrl.teach_time" />
+                <span class="label label-primary">地點: </span>
+                <input class="form-control" id="location" name="location" type="text" ng-model="ctrl.location" />
+                <span class="label label-primary">學習者: </span>
+                <input class="form-control" id="learner" name="learner" type="text"  />
+                <span class="label label-primary">指導者: </span>
+                <select  ng-model="ctrl.teacher" ng-options=  "m.name as m.name for m in ctrl.teachers">
+                    <option value="">--請選擇--</option>
+                </select><br />
+                <input ng-model="ctrl.teacher" class="form-control" id="teacher" name="teacher" type="text" />
+
+         <p>
+            <input class="btn-primary" type="submit" value="確  定" />
+        </p>
+
+        <hr />
+
+        <div>
+            @Html.ActionLink("回教學首頁", "Index")
+        </div>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.teach_date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.weekDay)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.teach_time)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.activity_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.learner)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.supervisor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.location)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                string backColor = "";
+                if (item.teach_date == DateTime.Today) { backColor = "thistle"; }
+                <tr style="background-color:@backColor">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.teach_date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.weekDay)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.teach_time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.activity_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.learner)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.supervisor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.location)
+                    </td>
+                    <td>
+                        @Html.ActionLink("修改", "Edit", new { id = item.id }) |
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+    }
+  </div>
+   
+
+
+
+

@@ -1,0 +1,83 @@
+﻿@model SKH_GS_MVC.Models.meeting_case
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>meeting_case</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.chartNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.chartNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.history)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.history)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GSR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GSR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GSVS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GSVS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PathoVS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PathoVS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
